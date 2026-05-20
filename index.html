@@ -5,73 +5,314 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة الألعاب المصغرة</title>
     <style>
+        :root {
+            --bg: #0b0c10;
+            --card: #151820;
+            --border: #232835;
+            --text: #cfd8dc;
+            --accent: #64b5f6;
+            --tag-bg: #1e222b;
+            --tag-hover: #262c38;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a2e;
-            color: #ffffff;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Tahoma, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 11px;
+            line-height: 1.3;
+            padding: 12px;
+        }
+        header {
             text-align: center;
-            padding: 20px;
-            margin: 0;
+            padding: 8px 0 12px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 14px;
         }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #162447;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        h1 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .sub { color: #888; font-size: 0.75rem; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 10px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
-        h1 {
-            color: #e43f5a;
-            margin-bottom: 10px;
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px;
         }
-        p {
-            color: #e2e2e2;
-            font-size: 1.1rem;
+        .card h2 {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+            border-bottom: 1px dashed #333;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-        .games-list {
-            margin: 30px 0;
-            padding: 0;
-            list-style: none;
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
         }
-        .games-list li {
-            background: #1f4068;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-right: 5px solid #e43f5a;
-            transition: transform 0.2s;
+        .tag {
+            background: var(--tag-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            color: #b0bec5;
+            transition: 0.1s;
+            cursor: default;
         }
-        .games-list li:hover {
-            transform: scale(1.03);
-            background: #234877;
+        .tag:hover { background: var(--tag-hover); color: #fff; }
+        footer {
+            text-align: center;
+            margin-top: 16px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            color: #666;
+            font-size: 0.7rem;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #888;
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            body { font-size: 10px; }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>🎮 منصة الألعاب المصغرة</h1>
+        <div class="sub">مرحباً بك! هذه صفحة تجريبية مضغوطة تعرض جميع الألعاب، الأوامر، ولوحات الترتيب.</div>
+    </header>
 
-    <div class="container">
-        <h1>🎮 قائمة الألعاب الخاصة بك</h1>
-        <p>مرحباً بك! هذه صفحة تجريبية بسيطة تعرض الألعاب المرفوعة على الاستضافة:</p>
-        
-        <ul class="games-list">
-            <li>🎯 لعبة تخمين الرقم</li>
-            <li>🎲 لعبة رمي النرد</li>
-            <li>✂️ لعبة حجر ورقة مقص</li>
-            <li>🏆 لوحة الصدارة والترتيب</li>
-        </ul>
+    <main class="grid">
+        <!-- 🎮 ألعاب فردية -->
+        <section class="card">
+            <h2>🎮 ألعاب فردية (Single Player)</h2>
+            <div class="tags">
+                <span class="tag">العاب الجديده</span>
+                <span class="tag">سائق / driver</span>
+                <span class="tag">قناص / sniper</span>
+                <span class="tag">جري / running / run</span>
+                <span class="tag">عامل / worker</span>
+                <span class="tag">قبطان / captain</span>
+                <span class="tag">قتل / kill</span>
+                <span class="tag">مفتاح / key</span>
+                <span class="tag">باب / door</span>
+                <span class="tag">عبور / crossing</span>
+                <span class="tag">مصعد / elevator</span>
+                <span class="tag">مصارع / wrestler</span>
+                <span class="tag">تفكيك / defuse</span>
+                <span class="tag">سير / walk</span>
+                <span class="tag">حارس / guard</span>
+                <span class="tag">سرق / rob</span>
+                <span class="tag">دفاع / defense</span>
+                <span class="tag">بناء / buil</span>
+                <span class="tag">صيد / hun</span>
+                <span class="tag">قنص / snipe</span>
+                <span class="tag">حظ / luck</span>
+                <span class="tag">روول / roll</span>
+                <span class="tag">بير / ball</span>
+                <span class="tag">نرد / dice</span>
+                <span class="tag">شوت / shoot</span>
+                <span class="tag">خاتم / ring</span>
+                <span class="tag">فجر / boom</span>
+                <span class="tag">رمح / spear</span>
+                <span class="tag">سحب / car</span>
+                <span class="tag">شطرنج / chess</span>
+                <span class="tag">سهم / arrow</span>
+                <span class="tag">هوكي / hok</span>
+                <span class="tag">سلوت / slot</span>
+                <span class="tag">زومبي / zombie</span>
+                <span class="tag">مليون / million</span>
+            </div>
+        </section>
 
-        <div class="footer">
-            تم التصميم للتجربة على Netlify ✨
-        </div>
-    </div>
+        <!-- 🎲 ألعاب سريعة عشوائية -->
+        <section class="card">
+            <h2>🎲 ألعاب سريعة عشوائية</h2>
+            <div class="tags">
+                <span class="tag">سباحة / swim</span>
+                <span class="tag">صاروخ / rocket</span>
+                <span class="tag">غوص / dive</span>
+                <span class="tag">استلام / salary</span>
+                <span class="tag">استثمار / invest</span>
+                <span class="tag">شغل / work</span>
+                <span class="tag">سوق / market</span>
+                <span class="tag">ربح / win</span>
+                <span class="tag">تجارة / trade</span>
+                <span class="tag">كلاش / clash</span>
+                <span class="tag">شراء / buy</span>
+                <span class="tag">بوكس / صندوق / box / crate</span>
+                <span class="tag">حصاد / harvest</span>
+                <span class="tag">زراعة / farm</span>
+                <span class="tag">استكشاف / explore</span>
+                <span class="tag">تعدين / mining</span>
+                <span class="tag">بحث / treasure</span>
+                <span class="tag">ذكاء / brain</span>
+                <span class="tag">تحدي / challenge</span>
+                <span class="tag">بطولة / tournament</span>
+                <span class="tag">انفجار / boom</span>
+                <span class="tag">مخزون / chest</span>
+                <span class="tag">ذهب / gold</span>
+                <span class="tag">تدريب / train</span>
+                <span class="tag">جائزة / prize</span>
+                <span class="tag">مغامرة / adventure</span>
+                <span class="tag">كريبتو / crypto</span>
+                <span class="tag">رحلة / trip</span>
+                <span class="tag">تنين / dragon</span>
+                <span class="tag">حفر / dig</span>
+                <span class="tag">قفل / lock</span>
+                <span class="tag">فطر / mushroom</span>
+                <span class="tag">نار / fire</span>
+                <span class="tag">ركض / ran</span>
+                <span class="tag">ترقية / upgrade</span>
+                <span class="tag">تجديد / renewal</span>
+                <span class="tag">تركيب / installation</span>
+                <span class="tag">مصباح / lamp</span>
+                <span class="tag">تصليح / repair</span>
+                <span class="tag">صيانة / maintenance</span>
+                <span class="tag">ترميم / restoration</span>
+            </div>
+        </section>
 
+        <!-- ⚔️ ألعاب زوجية وجماعية -->
+        <section class="card">
+            <h2>⚔️ ألعاب زوجية وجماعية</h2>
+            <div class="tags">
+                <span class="tag">كريكت / cricket</span>
+                <span class="tag">تخمين / guess</span>
+                <span class="tag">XO / اكس او</span>
+                <span class="tag">مصارعة / waiting</span>
+                <span class="tag">حرف / كلمة</span>
+                <span class="tag">اعثر / عثر / find</span>
+                <span class="tag">معركة / battle</span>
+                <span class="tag">علاقة / relationship</span>
+                <span class="tag">ضرب / hit</span>
+                <span class="tag">جوهرة / jewel</span>
+                <span class="tag">كف / kaf</span>
+                <span class="tag">أثقال / weight</span>
+                <span class="tag">weights / وزن</span>
+                <span class="tag">شد / pull</span>
+                <span class="tag">rope / حبل</span>
+                <span class="tag">كسر / break / crack</span>
+                <span class="tag">شحط / سحل /drag</span>
+                <span class="tag">روليت / roulette</span>
+            </div>
+        </section>
+
+        <!-- 📊 أوامر النقاط وقوائم التوب -->
+        <section class="card">
+            <h2>📊 النقاط وقوائم التوب</h2>
+            <div class="tags">
+                <span class="tag">نقاطي / رصيدي</span>
+                <span class="tag">points / poin</span>
+                <span class="tag">قائمة أبطال الألعاب : Game champions list</span>
+                <span class="tag">hero / بطل / Hero</span>
+                <span class="tag">تحويل نقاط : Transfer points</span>
+                <span class="tag">tx# / xt#12345#user</span>
+                <span class="tag">po@user / نقاط@مستخدم</span>
+                <span class="tag">توب / top</span>
+                <span class="tag">صيدي / catch</span>
+                <span class="tag">قنصي / snipers</span>
+                <span class="tag">شوتي / shoti</span>
+                <span class="tag">توب 1</span>
+                <span class="tag">توب 2</span>
+                <span class="tag">توب 3</span>
+                <span class="tag">توب 4</span>
+                <span class="tag">توب 5 / مصارعي / top 5</span>
+                <span class="tag">توب 6 / الزومبي / top 6</span>
+                <span class="tag">توب أثقال / اثقالي / top weights</span>
+                <span class="tag">توب ضرب / توب 8</span>
+                <span class="tag">top hit / top 8</span>
+                <span class="tag">توب كف / توب 7 / top 7</span>
+                <span class="tag">توب شد / حبلي / توب 11</span>
+                <span class="tag">top rope / top 11</span>
+                <span class="tag">توب كسر / كسري / توب 12</span>
+                <span class="tag">top break / top 12</span>
+                <span class="tag">توب شحط / سحلي / توب 10</span>
+                <span class="tag">top drag / top 10</span>
+                <span class="tag">توب مليون / مليوني / توب 9</span>
+                <span class="tag">.million / top 9</span>
+                <span class="tag">توب تخمين / top#guess</span>
+            </div>
+        </section>
+
+        <!-- 🎁 أوامر الهدايا والنشر والميديا -->
+        <section class="card">
+            <h2>🎁 الهدايا، النشر والميديا</h2>
+            <div class="tags">
+                <span class="tag">عرض قائمة الهدايا : Here is the list of gifts</span>
+                <span class="tag">gf</span>
+                <span class="tag">إرسال هدية لمستخدم : Send a gift to the user</span>
+                <span class="tag">gf#1#User</span>
+                <span class="tag">إرسال هدية صورة لمستخدم</span>
+                <span class="tag">vgf#Name / vgf@والاسم</span>
+                <span class="tag">نشر صورة : Post a photo</span>
+                <span class="tag">نشر@ / post</span>
+                <span class="tag">عرض منشور عشوائي : View a random post</span>
+                <span class="tag">منشور / pos</span>
+                <span class="tag">إعجاب بمنشور : Like a post</span>
+                <span class="tag">like@</span>
+                <span class="tag">أحببت منشور : loved a post</span>
+                <span class="tag">loved@</span>
+                <span class="tag">عدم إعجاب بمنشور : Unlike a post</span>
+                <span class="tag">dislike@</span>
+                <span class="tag">إبلاغ عن منشور : Report a post</span>
+                <span class="tag">report@</span>
+                <span class="tag">رسالة خاصة لصاحب المنشور</span>
+                <span class="tag">msg@</span>
+                <span class="tag">تشغيل هداية ومنشورات الغرفة</span>
+                <span class="tag">gift#on / gift on</span>
+                <span class="tag">إيقاف هداية ومنشورات الغرفة</span>
+                <span class="tag">gift#off / gift off</span>
+                <span class="tag">بحث صورة : Search for an image</span>
+                <span class="tag">صورة / صور / !img</span>
+            </div>
+        </section>
+
+        <!-- 🎵 أوامر الأغاني والموسيقى -->
+        <section class="card">
+            <h2>🎵 الأغاني والموسيقى</h2>
+            <div class="tags">
+                <span class="tag">نشر اغنية : Post a song</span>
+                <span class="tag">.so</span>
+                <span class="tag">تشغيل تيك توك : Run TikTok</span>
+                <span class="tag">@tik / @تيك</span>
+                <span class="tag">مشاركة أغنية مع مستخدم</span>
+                <span class="tag">@مشاركة / @مشاركه / *share / @share</span>
+                <span class="tag">تفاعل أغنية (إعجاب)</span>
+                <span class="tag">lk@ID</span>
+                <span class="tag">تفاعل أغنية (أعجبتني)</span>
+                <span class="tag">lv@ID</span>
+                <span class="tag">تفاعل أغنية (لم تعجبني)</span>
+                <span class="tag">dl@ID</span>
+                <span class="tag">تعليق على أغنية</span>
+                <span class="tag">cm@ID</span>
+            </div>
+        </section>
+
+        <!-- 🚪 أوامر الغرف والدخول -->
+        <section class="card">
+            <h2>🚪 الغرف والدخول</h2>
+            <div class="tags">
+                <span class="tag">لدخول البوت في الغرفة</span>
+                <span class="tag">join / دخول</span>
+                <span class="tag">اضافة ترحيب في الخاص</span>
+                <span class="tag">wc / wci / ترحيب</span>
+                <span class="tag">مسح ترحيب المستخدم في خاص</span>
+                <span class="tag">del / مسح</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        تم التصميم للتجربة على Netlify ✨ | حجم النص مضغوط لعرض النقاط والأوامر بوضوح
+    </footer>
 </body>
 </html>
